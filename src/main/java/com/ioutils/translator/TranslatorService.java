@@ -1,41 +1,40 @@
 package com.ioutils.translator;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StreamUtils;
 
-import java.io.*;
+import java.util.Scanner;
 
 @Service
 public class TranslatorService {
+    public String reverseOrderTheLyrics(String song) {
+        StringBuilder reverse = new StringBuilder();
+        Scanner sc = new Scanner(song);
+        while(sc.hasNextLine()){
+            String space = sc.nextLine();
+            if(space == ""){
 
-    public String getStringFromInputStream(InputStream input) throws IOException {
-        StringWriter writer = new StringWriter();
-        IOUtils;
-        return writer.toString();
-        StreamUtils.;
+            }
+        }
+        return "";
     }
 
-    public static String stringWriter(String fileName) throws IOException {
-
-        char[] buff = new char[1024];
-        StringWriter stringWriter = new StringWriter();
-        FileInputStream fStream = null;
-        Reader bReader = null;
-
-        try {
-
-            fStream = new FileInputStream(fileName);
-            bReader = new BufferedReader(new InputStreamReader(fStream, "UTF-8"));
-            int n;
-            while ((n = bReader.read(buff)) != -1) {
-                stringWriter.write(buff, 0, n);
+    public int countStrophes(String lyricsReverted) {
+        int count = 1;
+        Scanner sc = new Scanner(lyricsReverted);
+        while(sc.hasNextLine()){
+            String space = sc.nextLine();
+            if(space.equals("")){
+                count++;
             }
-        } finally {
-            bReader.close();
-            stringWriter.close();
-            fStream.close();
         }
-        return stringWriter.toString();
+        return count;
+    }
+
+    public String countTheMostRepeatedWord(String lyrics) {
+        return "";
+    }
+
+    public String replaceTheMostRepeatedWord(String lyrics) {
+        return lyrics.replaceAll("your", "flower");
     }
 }
