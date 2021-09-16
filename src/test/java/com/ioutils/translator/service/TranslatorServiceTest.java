@@ -3,10 +3,8 @@ package com.ioutils.translator.service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.StreamUtils;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 import static org.testng.Assert.*;
 
